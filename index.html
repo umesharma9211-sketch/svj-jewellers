@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVJ - Shree Vishwakarma Jewellers | Quality Silver, Gold & Artificial Jewellery</title>
+    <meta name="description" content="Shree Vishwakarma Jewellers - Your trusted destination for quality silver products, 14ct gold ornaments, and high-finished artificial jewellery.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+            color: #fff;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+        
+        .logo .subtitle {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        
+        nav {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #ffd700;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23c9b037" width="1200" height="600"/><circle cx="300" cy="150" r="80" fill="%23ffd700" opacity="0.3"/><circle cx="900" cy="400" r="100" fill="%23ffd700" opacity="0.3"/><circle cx="600" cy="300" r="60" fill="%23fff" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a1a1a;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
+        
+        .btn:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+        }
+        
+        .collections {
+            padding: 60px 20px;
+            background: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #ffd700;
+        }
+        
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .collection-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .collection-icon {
+            background: linear-gradient(135deg, #ffd700 0%, #c9b037 100%);
+            padding: 40px;
+            text-align: center;
+            font-size: 4rem;
+        }
+        
+        .collection-content {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .collection-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        
+        .collection-content p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .features {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 60px 20px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature p {
+            color: #ccc;
+        }
+        
+        .contact {
+            padding: 60px 20px;
+            background: #fff;
+            text-align: center;
+        }
+        
+        .contact-info {
+            max-width: 600px;
+            margin: 40px auto;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info p {
+            margin: 15px 0;
+            color: #666;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        footer p {
+            color: #ccc;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SVJ</h1>
+                <p class="subtitle">Shree Vishwakarma Jewellers</p>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Crafting Elegance Since Generations</h2>
+            <p>Discover our exquisite collection of quality silver products, 14ct gold ornaments, and high-finished artificial jewellery</p>
+            <a href="#collections" class="btn">Explore Collections</a>
+        </div>
+    </section>
+
+    <section class="collections" id="collections">
+        <div class="container">
+            <h2 class="section-title">Our Collections</h2>
+            <div class="collection-grid">
+                <div class="collection-card">
+                    <div class="collection-icon">🪙</div>
+                    <div class="collection-content">
+                        <h3>Quality Silver</h3>
+                        <p>Exquisite silver products crafted with precision and care. From traditional designs to contemporary styles, our silver collection embodies purity and elegance.</p>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-icon">💍</div>
+                    <div class="collection-content">
+                        <h3>14ct Gold Ornaments</h3>
+                        <p>Timeless gold jewellery that celebrates life's precious moments. Our 14ct gold collection features stunning designs that blend tradition with modern aesthetics.</p>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-icon">✨</div>
+                    <div class="collection-content">
+                        <h3>Artificial Jewellery</h3>
+                        <p>High-finished artificial jewellery that doesn't compromise on style. Perfect for every occasion, our collection offers affordable luxury with exceptional craftsmanship.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">Why Choose SVJ</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Premium Quality</h3>
+                    <p>Every piece is crafted with the finest materials and attention to detail</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Unique Designs</h3>
+                    <p>Exclusive collections that blend traditional artistry with modern trends</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">💎</div>
+                    <h3>Expert Craftsmanship</h3>
+                    <p>Generations of jewellery-making expertise in every creation</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Trusted Service</h3>
+                    <p>Building lasting relationships through quality and integrity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="contact-info">
+                <p><strong>Shree Vishwakarma Jewellers</strong></p>
+                <p>Experience the beauty of fine jewellery in person</p>
+                <p>📍 Visit our showroom for personalized service</p>
+                <p>📞 Contact us for inquiries and appointments</p>
+                <p>⏰ We look forward to serving you</p>
+            </div>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Shree Vishwakarma Jewellers (SVJ). All rights reserved.</p>
+            <p>Crafting memories, one jewel at a time.</p>
+        </div>
+    </footer>
+</body>
+</html>
