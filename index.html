@@ -3,253 +3,486 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVJ - Shree Vishwakarma Jewellers | Quality Silver, Gold & Artificial Jewellery</title>
-    <meta name="description" content="Shree Vishwakarma Jewellers - Your trusted destination for quality silver products, 14ct gold ornaments, and high-finished artificial jewellery.">
+    <title>SVJ - Shree Vishwakarma Jewellers | Luxury Jewellery Collection</title>
+    <meta name="description" content="Shree Vishwakarma Jewellers - Premium destination for exquisite silver, 14ct gold ornaments, and high-finished artificial jewellery.">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        :root {
+            --platinum: #E5E4E2;
+            --dark-platinum: #8C8C8C;
+            --charcoal: #2C2C2C;
+            --gold-accent: #D4AF37;
+            --white: #FFFFFF;
+            --light-gray: #F8F8F8;
+        }
+        
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f9f9f9;
+            color: var(--charcoal);
+            background: var(--white);
+            overflow-x: hidden;
         }
         
         header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
-            color: #fff;
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, var(--charcoal) 0%, #1a1a1a 100%);
+            color: var(--white);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
-            text-align: center;
-            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         
         .logo h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ffd700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--platinum);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .logo-accent {
+            color: var(--gold-accent);
         }
         
         .logo .subtitle {
-            font-size: 1.1rem;
-            color: #e0e0e0;
-            font-style: italic;
-            margin-top: 0.5rem;
-        }
-        
-        nav {
-            text-align: center;
-            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--platinum);
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-top: 5px;
         }
         
         nav a {
-            color: #fff;
+            color: var(--platinum);
             text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.1rem;
-            transition: color 0.3s;
+            margin: 0 25px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            text-transform: uppercase;
         }
         
         nav a:hover {
-            color: #ffd700;
+            color: var(--gold-accent);
         }
         
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23c9b037" width="1200" height="600"/><circle cx="300" cy="150" r="80" fill="%23ffd700" opacity="0.3"/><circle cx="900" cy="400" r="100" fill="%23ffd700" opacity="0.3"/><circle cx="600" cy="300" r="60" fill="%23fff" opacity="0.2"/></svg>');
+            background: linear-gradient(135deg, rgba(44,44,44,0.95) 0%, rgba(26,26,26,0.9) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23E5E4E2;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23D4AF37;stop-opacity:0.05"/></linearGradient></defs><rect fill="url(%23grad1)" width="1920" height="800"/><circle cx="400" cy="200" r="150" fill="%23E5E4E2" opacity="0.03"/><circle cx="1500" cy="600" r="200" fill="%23D4AF37" opacity="0.03"/></svg>');
             background-size: cover;
             background-position: center;
-            color: #fff;
+            color: var(--white);
             text-align: center;
-            padding: 100px 20px;
+            padding: 140px 40px 120px;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.3) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
         
         .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--platinum);
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease;
         }
         
         .hero p {
             font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: var(--platinum);
+            font-weight: 300;
+            letter-spacing: 1px;
+            line-height: 1.8;
+            animation: fadeInUp 1.2s ease;
         }
         
         .btn {
             display: inline-block;
-            background: #ffd700;
-            color: #1a1a1a;
-            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--gold-accent) 0%, #C5A028 100%);
+            color: var(--white);
+            padding: 16px 45px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            box-shadow: 0 8px 25px rgba(212,175,55,0.3);
+            font-size: 0.9rem;
+            animation: fadeInUp 1.4s ease;
         }
         
         .btn:hover {
-            background: #ffed4e;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212,175,55,0.4);
+            background: linear-gradient(135deg, #C5A028 0%, var(--gold-accent) 100%);
         }
         
-        .collections {
-            padding: 60px 20px;
-            background: #fff;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1a1a1a;
-            position: relative;
-            padding-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+            font-weight: 700;
+            letter-spacing: 1px;
         }
         
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: #ffd700;
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--dark-platinum);
+            margin-bottom: 4rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .collections {
+            padding: 100px 40px;
+            background: var(--light-gray);
         }
         
         .collection-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
         }
         
         .collection-card {
-            background: #f9f9f9;
-            border-radius: 10px;
+            background: var(--white);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .collection-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--platinum) 0%, var(--gold-accent) 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+        
+        .collection-card:hover::before {
+            transform: scaleX(1);
         }
         
         .collection-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
         }
         
-        .collection-icon {
-            background: linear-gradient(135deg, #ffd700 0%, #c9b037 100%);
-            padding: 40px;
-            text-align: center;
-            font-size: 4rem;
+        .collection-image {
+            height: 300px;
+            background: linear-gradient(135deg, var(--platinum) 0%, #d0d0d0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .collection-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(212,175,55,0.1) 100%);
         }
         
         .collection-content {
-            padding: 30px;
-            text-align: center;
+            padding: 40px;
         }
         
         .collection-content h3 {
-            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             margin-bottom: 1rem;
-            color: #1a1a1a;
+            color: var(--charcoal);
+            font-weight: 600;
         }
         
         .collection-content p {
             color: #666;
             line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        
+        .collection-link {
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        
+        .collection-link:hover {
+            color: var(--charcoal);
+        }
+        
+        .gallery {
+            padding: 100px 40px;
+            background: var(--white);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            padding: 30px;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h4 {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-overlay p {
+            color: var(--platinum);
+            font-size: 0.9rem;
+        }
+        
+        .placeholder-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--platinum) 0%, #c0c0c0 50%, var(--gold-accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
         }
         
         .features {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 60px 20px;
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 100px 40px;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
         }
         
         .feature {
             text-align: center;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
         }
         
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #ffd700;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold-accent);
         }
         
         .feature h3 {
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
+            color: var(--platinum);
         }
         
         .feature p {
             color: #ccc;
+            font-weight: 300;
+            line-height: 1.8;
         }
         
         .contact {
-            padding: 60px 20px;
-            background: #fff;
+            padding: 100px 40px;
+            background: var(--light-gray);
             text-align: center;
         }
         
         .contact-info {
-            max-width: 600px;
-            margin: 40px auto;
+            max-width: 700px;
+            margin: 50px auto;
             font-size: 1.1rem;
         }
         
         .contact-info p {
-            margin: 15px 0;
+            margin: 20px 0;
             color: #666;
+            font-weight: 300;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--charcoal);
+            border: 2px solid var(--platinum);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--platinum);
+            border-color: var(--gold-accent);
         }
         
         footer {
-            background: #1a1a1a;
-            color: #fff;
+            background: var(--charcoal);
+            color: var(--white);
             text-align: center;
-            padding: 30px 20px;
+            padding: 50px 40px;
         }
         
         footer p {
-            color: #ccc;
+            color: var(--platinum);
+            font-weight: 300;
+            margin: 10px 0;
         }
         
         @media (max-width: 768px) {
             .hero h2 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .logo h1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
             }
             
             nav a {
-                display: block;
-                margin: 10px 0;
+                margin: 0 10px;
+                font-size: 0.85rem;
+            }
+            
+            .collection-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
             }
         }
     </style>
@@ -257,52 +490,118 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <h1>SVJ</h1>
-                <p class="subtitle">Shree Vishwakarma Jewellers</p>
+            <div class="header-content">
+                <div class="logo">
+                    <div>
+                        <h1><span class="logo-accent">SVJ</span></h1>
+                        <p class="subtitle">Shree Vishwakarma Jewellers</p>
+                    </div>
+                </div>
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#collections">Collections</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                </nav>
             </div>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#collections">Collections</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
         </div>
     </header>
 
     <section class="hero" id="home">
-        <div class="container">
-            <h2>Crafting Elegance Since Generations</h2>
-            <p>Discover our exquisite collection of quality silver products, 14ct gold ornaments, and high-finished artificial jewellery</p>
-            <a href="#collections" class="btn">Explore Collections</a>
+        <div class="hero-content">
+            <h2>Timeless Elegance, Crafted to Perfection</h2>
+            <p>Discover our exclusive collection of premium silver, 14ct gold ornaments, and exquisitely finished artificial jewellery. Where tradition meets contemporary luxury.</p>
+            <a href="#gallery" class="btn">Explore Our Collection</a>
         </div>
     </section>
 
     <section class="collections" id="collections">
         <div class="container">
-            <h2 class="section-title">Our Collections</h2>
+            <h2 class="section-title">Our Premium Collections</h2>
+            <p class="section-subtitle">Curated with passion, crafted with precision</p>
+            
             <div class="collection-grid">
                 <div class="collection-card">
-                    <div class="collection-icon">🪙</div>
+                    <div class="collection-image">🪙</div>
                     <div class="collection-content">
                         <h3>Quality Silver</h3>
-                        <p>Exquisite silver products crafted with precision and care. From traditional designs to contemporary styles, our silver collection embodies purity and elegance.</p>
+                        <p>Exquisite silver masterpieces that embody purity and elegance. Each piece is meticulously crafted to showcase the timeless beauty of sterling silver, from traditional designs to contemporary artistry.</p>
+                        <a href="#gallery" class="collection-link">View Collection →</a>
                     </div>
                 </div>
                 
                 <div class="collection-card">
-                    <div class="collection-icon">💍</div>
+                    <div class="collection-image">💍</div>
                     <div class="collection-content">
                         <h3>14ct Gold Ornaments</h3>
-                        <p>Timeless gold jewellery that celebrates life's precious moments. Our 14ct gold collection features stunning designs that blend tradition with modern aesthetics.</p>
+                        <p>Celebrate life's precious moments with our stunning 14ct gold collection. Timeless designs that blend heritage craftsmanship with modern sophistication, perfect for every special occasion.</p>
+                        <a href="#gallery" class="collection-link">View Collection →</a>
                     </div>
                 </div>
                 
                 <div class="collection-card">
-                    <div class="collection-icon">✨</div>
+                    <div class="collection-image">✨</div>
                     <div class="collection-content">
-                        <h3>Artificial Jewellery</h3>
-                        <p>High-finished artificial jewellery that doesn't compromise on style. Perfect for every occasion, our collection offers affordable luxury with exceptional craftsmanship.</p>
+                        <h3>High-Finished Artificial</h3>
+                        <p>Luxury meets affordability in our premium artificial jewellery range. Impeccably finished pieces that rival fine jewellery, offering versatile elegance for every style and occasion.</p>
+                        <a href="#gallery" class="collection-link">View Collection →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Featured Gallery</h2>
+            <p class="section-subtitle">A glimpse into our exquisite craftsmanship</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="placeholder-image">💎</div>
+                    <div class="gallery-overlay">
+                        <h4>Diamond Necklace Set</h4>
+                        <p>14ct Gold with Premium Stones</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="placeholder-image">👑</div>
+                    <div class="gallery-overlay">
+                        <h4>Bridal Collection</h4>
+                        <p>Exquisite Wedding Jewellery</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="placeholder-image">💍</div>
+                    <div class="gallery-overlay">
+                        <h4>Engagement Rings</h4>
+                        <p>Timeless Symbols of Love</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="placeholder-image">📿</div>
+                    <div class="gallery-overlay">
+                        <h4>Silver Ornaments</h4>
+                        <p>Traditional & Contemporary</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="placeholder-image">✨</div>
+                    <div class="gallery-overlay">
+                        <h4>Designer Collection</h4>
+                        <p>High-Finished Artificial</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="placeholder-image">🌟</div>
+                    <div class="gallery-overlay">
+                        <h4>Festive Specials</h4>
+                        <p>Celebrate in Style</p>
                     </div>
                 </div>
             </div>
@@ -311,30 +610,32 @@
 
     <section class="features">
         <div class="container">
-            <h2 class="section-title" style="color: #fff;">Why Choose SVJ</h2>
+            <h2 class="section-title" style="color: var(--platinum);">The SVJ Promise</h2>
+            <p class="section-subtitle" style="color: #ccc;">Excellence in every detail</p>
+            
             <div class="features-grid">
                 <div class="feature">
                     <div class="feature-icon">🏆</div>
                     <h3>Premium Quality</h3>
-                    <p>Every piece is crafted with the finest materials and attention to detail</p>
+                    <p>Only the finest materials and gemstones, certified for authenticity and purity</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon">🎨</div>
                     <h3>Unique Designs</h3>
-                    <p>Exclusive collections that blend traditional artistry with modern trends</p>
+                    <p>Exclusive collections that blend traditional artistry with contemporary elegance</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon">💎</div>
-                    <h3>Expert Craftsmanship</h3>
-                    <p>Generations of jewellery-making expertise in every creation</p>
+                    <h3>Master Craftsmanship</h3>
+                    <p>Generations of expertise in creating jewellery that tells your story</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon">🤝</div>
-                    <h3>Trusted Service</h3>
-                    <p>Building lasting relationships through quality and integrity</p>
+                    <h3>Trusted Legacy</h3>
+                    <p>Building relationships through integrity, quality, and personalized service</p>
                 </div>
             </div>
         </div>
@@ -342,22 +643,28 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Visit Us</h2>
+            <h2 class="section-title">Visit Our Showroom</h2>
+            <p class="section-subtitle">Experience luxury in person</p>
+            
             <div class="contact-info">
-                <p><strong>Shree Vishwakarma Jewellers</strong></p>
-                <p>Experience the beauty of fine jewellery in person</p>
-                <p>📍 Visit our showroom for personalized service</p>
-                <p>📞 Contact us for inquiries and appointments</p>
-                <p>⏰ We look forward to serving you</p>
+                <p><strong style="font-size: 1.3rem; color: var(--charcoal);">Shree Vishwakarma Jewellers</strong></p>
+                <p>📍 Visit our exclusive showroom for personalized consultation</p>
+                <p>📞 Contact us for appointments and inquiries</p>
+                <p>⏰ We're here to make your jewellery dreams come true</p>
             </div>
-            <a href="#contact" class="btn">Get in Touch</a>
+            
+            <div class="contact-buttons">
+                <a href="#contact" class="btn">Schedule Appointment</a>
+                <a href="#contact" class="btn btn-secondary">WhatsApp Us</a>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Shree Vishwakarma Jewellers (SVJ). All rights reserved.</p>
-            <p>Crafting memories, one jewel at a time.</p>
+            <p style="font-size: 1.1rem; margin-bottom: 15px;">&copy; 2025 Shree Vishwakarma Jewellers (SVJ)</p>
+            <p>Crafting memories, one masterpiece at a time</p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">All rights reserved | Premium Jewellery Since Generations</p>
         </div>
     </footer>
 </body>
